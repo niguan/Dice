@@ -6,6 +6,7 @@ void setup()
 }
 void draw()
 {
+	background(0,142,0);
 	//your code here
 	for(int x = 50; x < 400; x= x + 125)
 	{
@@ -37,51 +38,56 @@ class Die //models one single dice cube
 		// Getting it to show only "n" dots
 		if ((Math.random() * 6) + 1 < 2)
 		{
-			fill(255);
-			ellipse(myX + 32,myY + 32,35,35);
+			fill(255,0,0);
+			ellipse(myX + 35,myY + 35,25,25);
 		}
-		else if((Math.random() * 6) < 2)
+		else if((Math.random() * 6) < 3)
 		{
-			fill(255);
-			ellipse(myX + 27, myY + 37,30,30);
-			ellipse(myX + 37, myY + 27,30,30);
+			fill(0);
+			ellipse(myX + 25, myY + 45,18,18);
+			ellipse(myX + 45, myY + 25,18,18);
 		}
-		// else if((Math.random() * 6) < 3)
-		// {
-		// 	ellipse();
-		// 	ellipse();
-		// }
-		// else if((Math.random() * 6) < 4)
-		// {
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();			
-		// }
-		// else if((Math.random() * 6) < 5)
-		// {
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();			
-		// }
-		// else 
-		// {
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();
-		// 	ellipse();
-		// }
+		else if((Math.random() * 6) < 4)
+		{
+			fill(0);
+			ellipse(myX + 20, myY + 50,15,15);
+			ellipse(myX + 35, myY + 35,15,15);
+			ellipse(myX + 50, myY + 20,15,15);
+		}
+		else if((Math.random() * 6) < 5)
+		{
+			fill(0);
+			ellipse(myX + 22, myY + 48,15,15);
+			ellipse(myX + 22, myY + 22,15,15);
+			ellipse(myX + 48, myY + 48,15,15);
+			ellipse(myX + 48, myY + 22,15,15);
+		}
+		else if((Math.random() * 6) < 6)
+		{
+			fill(0);
+			ellipse(myX + 20, myY + 52,15,15);
+			ellipse(myX + 20, myY + 20,15,15);
+			ellipse(myX + 35, myY + 36,15,15);
+			ellipse(myX + 50, myY + 52,15,15);
+			ellipse(myX + 50, myY + 20,15,15);
+		}
+		else 	
+		{
+			fill(0);
+			ellipse(myX + 20, myY + 52,15,15);
+			ellipse(myX + 20, myY + 20,15,15);
+			ellipse(myX + 35, myY + 36,15,15);
+			ellipse(myX + 50, myY + 52,15,15);
+			ellipse(myX + 50, myY + 20,15,15);
+			ellipse(myX + 50, myY + 20,15,15);
+		}
 
 		
 	}
 	void show()
 	{
 		//your code here
-		fill(0);
-		rect(myX,myY,65,65);
+		fill(255);
+		rect(myX,myY,70,70,20);
 	}
 }
