@@ -3,22 +3,26 @@ void setup()
 {
 	size(400,400);
 	noLoop();
+	textAlign(CENTER);
 }
 void draw()
 {
+	//your code here
 	background(0,142,0);
 	int sum = 0;
-	//your code here
-	for(int x = 50; x < 400; x= x + 125)
+	for(int x = 40; x < 400; x= x + 125)
 	{
 		for(int y = 15; y < 380; y= y + 125)
 		{
 			Die bob = new Die(x,y);
 			bob.show();
 			bob.roll();
-			sum = sum + bob.totaldots;
+			sum = sum + bob.dots;
 		}
 	}
+	textSize(16);
+	fill(0);
+	text("Sum: " + sum, 200, 380);
 }
 void mousePressed()
 {
@@ -26,39 +30,38 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-	int totaldots;
+	int dots;
 	int myX, myY;
 	//variable declarations here
-	Die(int x, int y) //constructor
+	Die(int x, int y) 
 	{
-		totaldots = (int)((Math.random()*6 )+ 1);
+		//variable initializations here
+		dots = (int)((Math.random()*6)+1);
 		myX = x;
 		myY = y;
-		//variable initializations here
 	}
 	void roll()
 	{
 		//your code here
-		// Getting it to show only "n" dots
-		if ((Math.random() * 6) + 1 < 2)
+		if (dots==1)
 		{
 			fill(255,0,0);
 			ellipse(myX + 35,myY + 35,25,25);
 		}
-		else if((Math.random() * 6) + 1 < 3)
+		else if(dots==2)
 		{
 			fill(0);
 			ellipse(myX + 25, myY + 45,18,18);
 			ellipse(myX + 45, myY + 25,18,18);
 		}
-		else if((Math.random() * 6) + 1 < 4)
+		else if(dots==3)
 		{
 			fill(0);
 			ellipse(myX + 20, myY + 50,15,15);
 			ellipse(myX + 35, myY + 35,15,15);
 			ellipse(myX + 50, myY + 20,15,15);
 		}
-		else if((Math.random() * 6) + 1 < 5)
+		else if(dots==4)
 		{
 			fill(0);
 			ellipse(myX + 22, myY + 48,15,15);
@@ -66,7 +69,7 @@ class Die //models one single dice cube
 			ellipse(myX + 48, myY + 48,15,15);
 			ellipse(myX + 48, myY + 22,15,15);
 		}
-		else if((Math.random() * 6) + 1 < 6)
+		else if(dots==5)
 		{
 			fill(0);
 			ellipse(myX + 20, myY + 52,15,15);
@@ -93,6 +96,5 @@ class Die //models one single dice cube
 		//your code here
 		fill(255);
 		rect(myX,myY,70,70,20);
-		text("Sum: " + totaldots,myX,myY);
 	}
 }
